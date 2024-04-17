@@ -347,6 +347,11 @@ function createTank(playerInfo) {
      phaserContext.input.keyboard.on('keydown-SPACE', function() {
         fireBullet(t);
     }); 
+    phaserContext.input.on('pointerdown',function (pointer){
+        if(pointer.leftButtonDown()){
+            fireBullet(t);
+        }
+    })
     let playerNameText = phaserContext.add.text(tank.x, tank.y - 30, playerInfo.playerNameText, {
         fontFamily: 'Arial',
         fontSize: '12px',
